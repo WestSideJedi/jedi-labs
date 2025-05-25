@@ -15,18 +15,18 @@ Adds or removes a specified user from a specified Active Directory group using `
 
 ```bash
 python3 ADGroupManager.py \
-  --dc-ip 10.10.11.69 \
-  --domain fluffy.htb \
-  --username p.agila \
-  --password prometheusx-303 \
-  --group-dn "CN=Service Accounts,CN=Users,DC=fluffy,DC=htb" \
-  --user-dn "CN=Prometheus Agila,CN=Users,DC=fluffy,DC=htb" \
+  --dc-ip [ip] \
+  --domain [domain] \
+  --username [username] \
+  --password '<YourPasswordHere>' \
+  --group-dn "CN=,CN=,DC=,DC=" \
+  --user-dn "CN=,CN=,DC=,DC=" \
   --action add
 ```
 
 ---
 
-### 🔹 `reset_password_ldap.py`
+### 🔹 `ADPasswordManger.py`
 
 **Purpose:**  
 Resets the password of a target AD user by directly modifying the `unicodePwd` attribute via LDAP. Requires specific privileges (not just GenericWrite).
@@ -39,10 +39,11 @@ Resets the password of a target AD user by directly modifying the `unicodePwd` a
 **Usage:**
 
 ```bash
-python3 reset_password_ldap.py \
-  --dc-ip 10.10.11.69 \
-  --domain fluffy.htb \
-  --username p.agila
+python3 ADPasswordManager.py \
+  --dc-ip [ip] \
+  --domain [domain] \
+  --username [username]
+  --password [password]
 ```
 
 ---
